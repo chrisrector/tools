@@ -1,0 +1,7 @@
+# convenience script to log into MS online
+
+$LiveCred = Get-Credential
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $LiveCred -Authentication Basic -AllowRedirection
+Import-PSSession $Session
+Connect-MsolService –Credential $LiveCred
+#Connect-SPOService –Credential $LiveCred -Url <url>
