@@ -1,7 +1,7 @@
 import-module AzureAD
-Connect-AzureAD
+#Connect-AzureAD
 
-$DataPath = “C:\tmp\aad_role_members.csv”
+$DataPath = 'aad_role_members.csv'
 $Results = @()
 $azureadroles = Get-AzureADDirectoryRole
 foreach($role in $azureadroles) {
@@ -21,7 +21,7 @@ foreach($role in $azureadroles) {
   
     $Results += New-Object psobject -Property $properties
   }
-  
-  $Results | Select-Object RoleName,UPN,DisplayName,ObjectType,Enabled,
-    GivenName,Surname | Export-Csv -notypeinformation -Path $DataPath
 }
+
+$Results | Select-Object RoleName,UPN,DisplayName,ObjectType,Enabled,
+    GivenName,Surname | Export-Csv -notypeinformation -Path $DataPath

@@ -1,4 +1,4 @@
-# script to remove a SharePoint Online external user
+# Remove a SharePoint Online external user
 
 $upn = $args[0]
 $site = $args[1]
