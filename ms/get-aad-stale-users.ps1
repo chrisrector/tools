@@ -1,7 +1,7 @@
 ﻿# Retreive guest users based on STS token age
 
 # Minimum token age
-[int]$StaleAge = 180
+[int]$StaleAge = 0
 
 # connect to tenant
 # ccnnect-AzureAD
